@@ -1,0 +1,46 @@
+diff --git a/__pycache__/controller.cpython-39.pyc b/__pycache__/controller.cpython-39.pyc
+index 8f5a5fe..dc9f75a 100644
+Binary files a/__pycache__/controller.cpython-39.pyc and b/__pycache__/controller.cpython-39.pyc differ
+diff --git a/__pycache__/utils.cpython-39.pyc b/__pycache__/utils.cpython-39.pyc
+index 1b06f01..7e86d46 100644
+Binary files a/__pycache__/utils.cpython-39.pyc and b/__pycache__/utils.cpython-39.pyc differ
+diff --git a/controller.py b/controller.py
+index fb54922..09c52e8 100644
+--- a/controller.py
++++ b/controller.py
+@@ -122,3 +122,6 @@ class Controller:
+             if i % 100 == 0:
+                 full, joint = self.sample_episode(env, test=True)
+                 make_gif(full, joint)
++                wandb.log(data={
++                    'video': wandb.Video('test_anim.gif')
++                }, step=i)
+diff --git a/main.py b/main.py
+index c72f6b4..d355f97 100644
+--- a/main.py
++++ b/main.py
+@@ -26,7 +26,7 @@ if __name__ == '__main__':
+     # # print(env.get_joint_obs().shape)
+     # plt.show()
+ 
+-    wandb.init(project='robots_proj', group='big_model', job_type='test', mode='disabled')
++    wandb.init(project='robots_proj', group='big_model', job_type='test')
+     controller.train(env)
+ 
+     # human_act_traj = [[], [], [], [], []]
+diff --git a/test_anim.gif b/test_anim.gif
+index ad236ee..0364182 100644
+Binary files a/test_anim.gif and b/test_anim.gif differ
+diff --git a/utils.py b/utils.py
+index 8ea3e09..7cc9c13 100644
+--- a/utils.py
++++ b/utils.py
+@@ -4,7 +4,7 @@ import matplotlib.animation as animation
+ 
+ 
+ def make_gif(full, joint):
+-    fig, axs = plt.subplots(1, 2, figsize=(16, 8))
++    fig, axs = plt.subplots(1, 2, figsize=(16, 8), dpi=50)
+ 
+     data = [full, joint]
+     ax_0 = axs[0].imshow(data[0][0])

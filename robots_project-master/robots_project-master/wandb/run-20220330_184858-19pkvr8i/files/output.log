@@ -1,0 +1,34 @@
+trajectories collected in 13.05
+got batch
+calculated statistics
+update is done in 0.57 sec
+trajectories collected in 12.61
+got batch
+calculated statistics
+update is done in 0.53 sec
+trajectories collected in 12.96
+got batch
+calculated statistics
+update is done in 0.50 sec
+trajectories collected in 15.24
+got batch
+calculated statistics
+update is done in 0.53 sec
+trajectories collected in 16.59
+got batch
+calculated statistics
+update is done in 0.71 sec
+Traceback (most recent call last):
+  File "/Users/Ilya.Zisman/uni/robots_proj/main.py", line 30, in <module>
+    controller.train(env)
+  File "/Users/Ilya.Zisman/uni/robots_proj/controller.py", line 103, in train
+    traj, rew = self.sample_episode(env)
+  File "/Users/Ilya.Zisman/uni/robots_proj/controller.py", line 45, in sample_episode
+    next_obs, rewards, done = env.step(act)
+  File "/Users/Ilya.Zisman/uni/robots_proj/env_Drones/env_Drones.py", line 232, in step
+    obs = self.get_joint_obs()
+  File "/Users/Ilya.Zisman/uni/robots_proj/env_Drones/env_Drones.py", line 138, in get_joint_obs
+    temp = self.get_drone_obs(self.drone_list[k])
+  File "/Users/Ilya.Zisman/uni/robots_proj/env_Drones/env_Drones.py", line 121, in get_drone_obs
+    obs[i, j, 0] = 0.5
+KeyboardInterrupt

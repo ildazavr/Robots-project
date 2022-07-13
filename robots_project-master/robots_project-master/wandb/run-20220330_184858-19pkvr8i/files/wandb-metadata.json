@@ -1,0 +1,22 @@
+{
+    "os": "macOS-10.16-x86_64-i386-64bit",
+    "python": "3.9.11",
+    "heartbeatAt": "2022-03-30T15:49:00.505398",
+    "startedAt": "2022-03-30T15:48:58.870495",
+    "docker": null,
+    "cpu_count": 16,
+    "cuda": null,
+    "args": [],
+    "state": "running",
+    "program": "/Users/Ilya.Zisman/uni/robots_proj/main.py",
+    "codePath": "main.py",
+    "git": {
+        "remote": "https://github.com/suessmann/robots_project.git",
+        "commit": "ec5c9f5a762be6af46d8101932a656858f4cb407"
+    },
+    "email": "ilyazisman@gmail.com",
+    "root": "/Users/Ilya.Zisman/uni/robots_proj",
+    "host": "mbp-jb",
+    "username": "Ilya.Zisman",
+    "executable": "/opt/miniconda3/envs/robots_project/bin/python"
+}
